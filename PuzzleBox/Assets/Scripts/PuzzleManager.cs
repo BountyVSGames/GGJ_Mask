@@ -37,8 +37,7 @@ public class PuzzleManager : MonoBehaviour
             if (PuzzlesToSpawn[i] != null) 
             {
                 var newPuzzle = Instantiate(PuzzlesToSpawn[i], position, puzzleTransform.rotation);
-                newPuzzle.transform.SetParent(puzzleTransform);
-                newPuzzle.transform.localScale = Vector3.one;
+                newPuzzle.transform.SetParent(puzzleTransform, true);
 
                 activePuzzles.Add(newPuzzle);
             }
