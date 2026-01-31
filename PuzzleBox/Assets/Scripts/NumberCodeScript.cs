@@ -33,13 +33,13 @@ public class NumberCodeScript : MonoBehaviour
 
             if (Input.GetMouseButtonDown(0))
         {
-            print("Cliced");
+            
             Ray ray = m_Camera.ScreenPointToRay(mousePosition);
             RaycastHit hit;
             
             if (Physics.Raycast(ray, out hit))   
             {
-                print("hit"); 
+                
                 foreach (GameObject button in buttons)
                 {
                    // UnityEngine.Debug.Log(hit.collider.gameObject.name, hit.collider.gameObject);
@@ -47,10 +47,8 @@ public class NumberCodeScript : MonoBehaviour
                     if (hit.collider.gameObject == button)
                     {
                         Transform child = button.transform.GetChild(0);
-                        TextMeshPro tmp = child.GetComponent<TextMeshPro>();
-                       
+                        TextMeshPro tmp = child.GetComponent<TextMeshPro>();                       
                         curentNumber += tmp.text;
-                        print(curentNumber);
                         codeDisplay.text = curentNumber;
                         CheckNummber();
                         
@@ -67,7 +65,6 @@ public class NumberCodeScript : MonoBehaviour
         {
             if (curentNumber == Number)
             {
-                print("open");
                 Object.Destroy(this.gameObject); 
             }
             else

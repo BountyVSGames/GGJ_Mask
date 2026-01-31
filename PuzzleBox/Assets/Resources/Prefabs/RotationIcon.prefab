@@ -48,6 +48,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6f2202eaa1ab3c04482e4ace46203752, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::IconRotation
+  materials:
+  - {fileID: 2100000, guid: 0e7da3e5a2ce50e4b98306aa8635c33d, type: 2}
+  - {fileID: 2100000, guid: 6347ad7bf25178e4b85a26e0665614e5, type: 2}
+  - {fileID: 2100000, guid: b13db0a309c2f0f448b004699f37fd55, type: 2}
+  - {fileID: 2100000, guid: 93b4520fe98dcdf488cf4ca618686cf2, type: 2}
+  answer:
+  - {fileID: 2100000, guid: 93b4520fe98dcdf488cf4ca618686cf2, type: 2}
+  - {fileID: 2100000, guid: b13db0a309c2f0f448b004699f37fd55, type: 2}
+  - {fileID: 2100000, guid: 0e7da3e5a2ce50e4b98306aa8635c33d, type: 2}
+  icons:
+  - {fileID: 4566316769990166575}
+  - {fileID: 7637077704042649004}
+  - {fileID: 5828389978411998130}
 --- !u!1 &4566316769990166575
 GameObject:
   m_ObjectHideFlags: 0
@@ -115,7 +128,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: b13db0a309c2f0f448b004699f37fd55, type: 2}
+  - {fileID: 2100000, guid: 0e7da3e5a2ce50e4b98306aa8635c33d, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -227,7 +240,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 93b4520fe98dcdf488cf4ca618686cf2, type: 2}
+  - {fileID: 2100000, guid: 0e7da3e5a2ce50e4b98306aa8635c33d, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
