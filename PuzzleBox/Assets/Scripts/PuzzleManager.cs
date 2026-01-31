@@ -1,10 +1,13 @@
 using System.Collections.Generic;
 using UnityEngine;
+using static UnityEditor.FilePathAttribute;
 
 public class PuzzleManager : MonoBehaviour
 {
     public List<Puzzle> PuzzlesToSpawn;
     private List<Puzzle> activePuzzles = new List<Puzzle>();
+
+    public List<GameObject> puzzleLocations;
 
     private bool allPuzzlesUnlocked = false;
 
@@ -23,14 +26,20 @@ public class PuzzleManager : MonoBehaviour
         }
     }
 
-    private void SpawnPuzzles() 
+    private void SpawnPuzzles()
     {
-        for (int i = 0; i < PuzzlesToSpawn.Count; i++) 
+        for (int i = 0; i < puzzleLocations.Count; i++)
         {
-            Vector3 position = new Vector3(i * 3, transform.position.y, transform.position.z);
-            var newPuzzle = Instantiate(PuzzlesToSpawn[i], position, Quaternion.identity);
+            Transform puzzleTransform = puzzleLocations[i].transform;
 
-            activePuzzles.Add(newPuzzle);
+            Vector3 position = new Vector3(puzzleTransform.position.x, puzzleTransform.position.y, puzzleTransform.position.z);
+
+            if (PuzzlesToSpawn[i] != null) 
+            {
+                var newPuzzle = Instantiate(PuzzlesToSpawn[i], position, puzzleTransform.rotation);
+
+                activePuzzles.Add(newPuzzle);
+            }
         }
     }
 
