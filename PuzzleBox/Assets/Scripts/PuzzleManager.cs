@@ -31,13 +31,15 @@ public class PuzzleManager : MonoBehaviour
         for (int i = 0; i < puzzleLocations.Count; i++)
         {
             Transform puzzleTransform = puzzleLocations[i].transform;
+            Vector3 originalPuzzleScale = new Vector3(PuzzlesToSpawn[i].transform.localScale.x, PuzzlesToSpawn[i].transform.localScale.y, PuzzlesToSpawn[i].transform.localScale.z);
 
             Vector3 position = new Vector3(puzzleTransform.position.x, puzzleTransform.position.y, puzzleTransform.position.z);
 
             if (PuzzlesToSpawn[i] != null) 
             {
                 var newPuzzle = Instantiate(PuzzlesToSpawn[i], position, puzzleTransform.rotation);
-                newPuzzle.transform.SetParent(puzzleTransform, true);
+                newPuzzle.transform.SetParent(puzzleTransform);
+                newPuzzle.transform.localScale = originalPuzzleScale;
 
                 activePuzzles.Add(newPuzzle);
             }
