@@ -124,6 +124,71 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 4287019342107413431, guid: 5bccd9b65a929bb459432958e78bcc2d, type: 3}
   m_PrefabInstance: {fileID: 962451017}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &148061944
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 148061943}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 948f4100a11a5c24981795d21301da5c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.Postprocessing.Runtime::UnityEngine.Rendering.PostProcessing.PostProcessLayer
+  volumeTrigger: {fileID: 148061947}
+  volumeLayer:
+    serializedVersion: 2
+    m_Bits: 8
+  stopNaNPropagation: 1
+  finalBlitToCameraTarget: 0
+  antialiasingMode: 0
+  temporalAntialiasing:
+    jitterSpread: 0.75
+    sharpness: 0.25
+    stationaryBlending: 0.95
+    motionBlending: 0.85
+  subpixelMorphologicalAntialiasing:
+    quality: 2
+  fastApproximateAntialiasing:
+    fastMode: 0
+    keepAlpha: 0
+  fog:
+    enabled: 1
+    excludeSkybox: 1
+  debugLayer:
+    lightMeter:
+      width: 512
+      height: 256
+      showCurves: 1
+    histogram:
+      width: 512
+      height: 256
+      channel: 3
+    waveform:
+      exposure: 0.12
+      height: 256
+    vectorscope:
+      size: 256
+      exposure: 0.12
+    overlaySettings:
+      linearDepth: 0
+      motionColorIntensity: 4
+      motionGridSize: 64
+      colorBlindnessType: 0
+      colorBlindnessStrength: 1
+  m_Resources: {fileID: 11400000, guid: d82512f9c8e5d4a4d938b575d47f88d4, type: 2}
+  m_ShowToolkit: 0
+  m_ShowCustomSorter: 0
+  breakBeforeColorGrading: 0
+  m_BeforeTransparentBundles: []
+  m_BeforeStackBundles: []
+  m_AfterStackBundles: []
+--- !u!4 &148061947 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 3608621503620119556, guid: 5bccd9b65a929bb459432958e78bcc2d, type: 3}
+  m_PrefabInstance: {fileID: 962451017}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &217631229
 GameObject:
   m_ObjectHideFlags: 0
@@ -316,9 +381,20 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedGameObjects:
+    - targetCorrespondingSourceObject: {fileID: 6280456012424380849, guid: 5bccd9b65a929bb459432958e78bcc2d, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1948893683}
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 4287019342107413431, guid: 5bccd9b65a929bb459432958e78bcc2d, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 148061944}
   m_SourcePrefab: {fileID: 100100000, guid: 5bccd9b65a929bb459432958e78bcc2d, type: 3}
+--- !u!4 &962451018 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 6280456012424380849, guid: 5bccd9b65a929bb459432958e78bcc2d, type: 3}
+  m_PrefabInstance: {fileID: 962451017}
+  m_PrefabAsset: {fileID: 0}
 --- !u!43 &1114431476
 Mesh:
   m_ObjectHideFlags: 0
@@ -975,6 +1051,70 @@ Light:
   m_CorrespondingSourceObject: {fileID: 5241329569878765099, guid: 2b1ff2e31a84e724db63e11a4b4c0e06, type: 3}
   m_PrefabInstance: {fileID: 1825702995}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1948893682
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1948893683}
+  - component: {fileID: 1948893685}
+  - component: {fileID: 1948893684}
+  m_Layer: 3
+  m_Name: DamageOverlay
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1948893683
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1948893682}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 962451018}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1948893684
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1948893682}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 80706254ac8a0a2448802e7b653592ac, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::TakeDamage
+  maxVignetteIntensity: 0.613
+  vignetteFadeDuration: 2
+--- !u!114 &1948893685
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1948893682}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8b9a305e18de0c04dbd257a21cd47087, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.Postprocessing.Runtime::UnityEngine.Rendering.PostProcessing.PostProcessVolume
+  sharedProfile: {fileID: 11400000, guid: b8efe2dd7ae035c419d1b218a17599f3, type: 2}
+  isGlobal: 1
+  blendDistance: 0
+  weight: 1
+  priority: 0
 --- !u!1001 &1716374883883893039
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1128,6 +1268,10 @@ PrefabInstance:
       propertyPath: objectToFollow
       value: 
       objectReference: {fileID: 148061943}
+    - target: {fileID: 8686604244210069743, guid: af6dedc2387987840a6c95025f8e5541, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
