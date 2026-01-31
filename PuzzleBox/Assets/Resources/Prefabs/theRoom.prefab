@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5141159563776372341}
   - component: {fileID: 5241329569878765099}
+  - component: {fileID: 1641840248279920508}
   m_Layer: 0
   m_Name: Spot Light
   m_TagString: Untagged
@@ -43,9 +44,9 @@ Light:
   serializedVersion: 12
   m_Type: 0
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Intensity: 1
-  m_Range: 10
-  m_SpotAngle: 81.4
+  m_Intensity: 2.5
+  m_Range: 15
+  m_SpotAngle: 95.3
   m_InnerSpotAngle: 21.80208
   m_CookieSize2D: {x: 0.5, y: 0.5}
   m_Shadows:
@@ -97,6 +98,23 @@ Light:
   m_LightUnit: 1
   m_LuxAtDistance: 1
   m_EnableSpotReflector: 1
+--- !u!114 &1641840248279920508
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2307683598590930483}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 05a07ee0c36aec74ab645a766180f488, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::MirrorLightFlicker
+  mirroredLightComponent: {fileID: 0}
+  minTimer: 10
+  maxTimer: 60
+  minFlickerAmount: 1
+  maxFlickerAmount: 5
 --- !u!1001 &3971970078176790849
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1989,7 +2007,7 @@ MonoBehaviour:
   m_PreserveMeshAssetOnDestroy: 0
   assetGuid: 
   m_Mesh: {fileID: 0}
-  m_VersionIndex: 1752
+  m_VersionIndex: 1770
   m_IsSelectable: 1
   m_SelectedFaces: 
   m_SelectedEdges: []
