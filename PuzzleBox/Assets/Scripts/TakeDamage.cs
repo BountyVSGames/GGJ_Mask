@@ -4,14 +4,10 @@ using UnityEngine.Rendering.PostProcessing;
 
 public class TakeDamage : MonoBehaviour
 {
-
-    [Range(0, 1)] public float maxVignetteIntensity;
-    public float vignetteFadeDuration;
-
-    private float currentVignetteIntensity;
-
     PostProcessVolume postProcessVolume; 
     Vignette vignette;
+
+    [HideInInspector] public bool effectOn = false;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -24,48 +20,23 @@ public class TakeDamage : MonoBehaviour
             Debug.LogWarning("Vignette empty");
             return;
         }
-
-        vignette.enabled.Override(false);
-
-        currentVignetteIntensity = vignette.intensity;
     }
 
     // Update is called once per frame
     void Update()
     {
-    }
-
-    private IEnumerator IncreaseIntensityOverTime()
-    {
-        float startValue = currentVignetteIntensity;
-        float elapsed = 0.0f;
-
-        while (elapsed < vignetteFadeDuration) 
-        { 
-            elapsed += Time.deltaTime;
-
-            currentVignetteIntensity = Mathf.Lerp(startValue, maxVignetteIntensity, elapsed / vignetteFadeDuration);
-
-            vignette.enabled.Override(true);
-            vignette.intensity.Override(currentVignetteIntensity);
-            yield return null;
+        if (effectOn)
+        {
+            float currentIntensity = vignette.intensity.value;
+            currentIntensity += Time.deltaTime * 0.4f;
+            vignette.intensity.Override(currentIntensity);
         }
-    }
 
-    private IEnumerator DecreaseIntensityOverTime()
-    {
-        float startValue = currentVignetteIntensity;
-        float elapsed = 0.0f;
-
-        while (elapsed < vignetteFadeDuration) 
-        { 
-            elapsed += Time.deltaTime;
-
-            currentVignetteIntensity = Mathf.Lerp(startValue, -maxVignetteIntensity, elapsed / vignetteFadeDuration);
-
-            vignette.enabled.Override(true);
-            vignette.intensity.Override(currentVignetteIntensity);
-            yield return null;
+        if (!effectOn)
+        {
+            float currentIntensity = vignette.intensity.value;
+            currentIntensity -= Time.deltaTime * 0.1f;
+            vignette.intensity.Override(currentIntensity);
         }
     }
 }
