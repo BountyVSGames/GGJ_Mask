@@ -38,8 +38,8 @@ public class PuzzleManager : MonoBehaviour
             {
                 var newPuzzle = Instantiate(PuzzlesToSpawn[i], position, puzzleTransform.rotation);
                 newPuzzle.transform.SetParent(puzzleTransform);
-                Vector3 scale = new Vector3(1f,1f,1f);
-                newPuzzle.transform.localScale = scale;
+                newPuzzle.transform.localScale = Vector3.one;
+
                 activePuzzles.Add(newPuzzle);
             }
         }
