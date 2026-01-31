@@ -303,8 +303,76 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: ee03b61f029d97743bfec1d53b41c750, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 923285758}
   m_SourcePrefab: {fileID: 100100000, guid: ee03b61f029d97743bfec1d53b41c750, type: 3}
+--- !u!1001 &682825820
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: -8679921383154817045, guid: 537220afa65c8a94cbcda19fae133177, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -3.456
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 537220afa65c8a94cbcda19fae133177, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.712
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 537220afa65c8a94cbcda19fae133177, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 1.696
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 537220afa65c8a94cbcda19fae133177, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.6969748
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 537220afa65c8a94cbcda19fae133177, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0.7170956
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 537220afa65c8a94cbcda19fae133177, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 537220afa65c8a94cbcda19fae133177, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 537220afa65c8a94cbcda19fae133177, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: -91.63
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 537220afa65c8a94cbcda19fae133177, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 537220afa65c8a94cbcda19fae133177, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: 537220afa65c8a94cbcda19fae133177, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 1ea57dd58d208b745883790a977f6cb3, type: 2}
+    - target: {fileID: 919132149155446097, guid: 537220afa65c8a94cbcda19fae133177, type: 3}
+      propertyPath: m_Name
+      value: SM_Gear
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 537220afa65c8a94cbcda19fae133177, type: 3}
+      propertyPath: m_TagString
+      value: EagleVision
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 537220afa65c8a94cbcda19fae133177, type: 3}
 --- !u!1 &725370035
 GameObject:
   m_ObjectHideFlags: 0
@@ -494,6 +562,24 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
+--- !u!1 &923285756 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: ee03b61f029d97743bfec1d53b41c750, type: 3}
+  m_PrefabInstance: {fileID: 320179715}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &923285758
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 923285756}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d363cbe1afed0c24ab15b2d0fa769aae, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::EagleVision
+  HighlightMaterial: {fileID: 2100000, guid: 4ebee4de3ecbc9042a69f7c2588852b4, type: 2}
 --- !u!1 &1734443326
 GameObject:
   m_ObjectHideFlags: 0
@@ -843,3 +929,4 @@ SceneRoots:
   - {fileID: 2062526463}
   - {fileID: 2132865508}
   - {fileID: 217631233}
+  - {fileID: 682825820}
