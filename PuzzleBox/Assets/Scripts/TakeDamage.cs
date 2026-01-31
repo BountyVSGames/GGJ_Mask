@@ -33,17 +33,6 @@ public class TakeDamage : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKey(KeyCode.K))
-        {
-            StopAllCoroutines();
-            StartCoroutine(IncreaseIntensityOverTime());
-        }
-
-        if (Input.GetKey(KeyCode.L))
-        {
-            StopAllCoroutines();
-            StartCoroutine(DecreaseIntensityOverTime());
-        }
     }
 
     private IEnumerator IncreaseIntensityOverTime()
