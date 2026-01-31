@@ -23,6 +23,12 @@ public class PlayerBehaviour : MonoBehaviour
     private Camera mainCamera;
     private Vector2 camRot;
 
+    private Vector2 lastCamRotation;
+    private Vector2 velocity;
+    [SerializeField] private float damageThreshold = 15.0f;
+
+    public TakeDamage damageOverlayScript;
+
     private void Start()
     {
         mainCamera = Camera.main;
@@ -30,6 +36,10 @@ public class PlayerBehaviour : MonoBehaviour
         inputReader.SwitchStateEvent += OnStateSwitch;
 
         UpdatePlayerState(PlayerState.LookState);
+
+        lastCamRotation = new Vector2(transform.rotation.x, transform.rotation.y);
+
+        damageOverlayScript = GetComponentInChildren<TakeDamage>();
     }
 
     private void OnDestroy()
@@ -49,6 +59,7 @@ public class PlayerBehaviour : MonoBehaviour
         if(playerState == PlayerState.LookState)
         {
             LookCamUpdate();
+            CheckVelocity();
         }
         else
         {
@@ -105,9 +116,28 @@ public class PlayerBehaviour : MonoBehaviour
 
         float angle = Quaternion.Angle(mainCamera.transform.rotation, targetRot);
 
-        if(angle > 5.0f)
+        if (angle > 5.0f)
         {
             mainCamera.transform.rotation = Quaternion.RotateTowards(mainCamera.transform.rotation, Quaternion.LookRotation(dir), 1 * Time.deltaTime);
         }
+    }
+
+    private void CheckVelocity() 
+    {
+        float RotationX = camRot.x - lastCamRotation.x;
+        float RotationY = camRot.y - lastCamRotation.y;
+        velocity.x = Mathf.Abs(RotationX / Time.deltaTime);
+        velocity.y = Mathf.Abs(RotationY / Time.deltaTime);
+
+        if (velocity.x > damageThreshold || velocity.y > damageThreshold)
+        {
+            damageOverlayScript.effectOn = true;
+        }
+        else
+        {
+            damageOverlayScript.effectOn = false;
+        }
+
+        lastCamRotation = camRot;
     }
 }

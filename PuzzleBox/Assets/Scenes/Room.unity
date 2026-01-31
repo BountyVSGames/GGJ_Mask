@@ -335,6 +335,14 @@ PrefabInstance:
       propertyPath: target
       value: 
       objectReference: {fileID: 277388835}
+    - target: {fileID: 3735954125331884599, guid: 5bccd9b65a929bb459432958e78bcc2d, type: 3}
+      propertyPath: damageThreshold
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 3735954125331884599, guid: 5bccd9b65a929bb459432958e78bcc2d, type: 3}
+      propertyPath: damageOverlayScript
+      value: 
+      objectReference: {fileID: 1948893684}
     - target: {fileID: 6280456012424380849, guid: 5bccd9b65a929bb459432958e78bcc2d, type: 3}
       propertyPath: m_LocalPosition.x
       value: -2.67
@@ -1096,8 +1104,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 80706254ac8a0a2448802e7b653592ac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TakeDamage
-  maxVignetteIntensity: 0.613
-  vignetteFadeDuration: 2
+  effectOn: 1
 --- !u!114 &1948893685
 MonoBehaviour:
   m_ObjectHideFlags: 0
